@@ -52,9 +52,36 @@ while condicao_de_parada == False:
         print('\n\033[1;36m******* Inserindo Dados do Novo Sorteio *******\033[m')
 
         # Definindo as configurações do Sorteio.
-        nome_do_sorteio = input('\033[1;33mInforme um nome para seu sorteio:  \033[m')
-        quantidade_de_equipes = int(input('\033[1;33mInsira a quantidade de equipes:  \033[m'))
-        jogadores_por_equipe = int(input('\033[1;33mInsira a quantidade de jogadores por equipe:  \033[m'))
+        passo1 = True
+        while passo1:
+            nome_do_sorteio = input('\033[1;33mInforme um nome para seu sorteio:  \033[m')
+            condicao = len(nome_do_sorteio) > 0
+
+            if condicao:
+                passo1 = False
+            else:
+                print('\033[1;31m******* INFORME NO MÍNIMO 1 (UM) CARACTERE\033[m')
+
+        passo2 = True
+        while passo2:
+            quantidade_de_equipes = input('\033[1;33mInsira a quantidade de equipes:  \033[m')
+            condicao = quantidade_de_equipes.isdigit()
+            if condicao:
+                quantidade_de_equipes = int(quantidade_de_equipes)
+                passo2 = False
+            else:
+                print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
+
+        passo3 = True
+        while passo3:
+            jogadores_por_equipe = input('\033[1;33mInsira a quantidade de jogadores por equipe:  \033[m')
+            condicao = jogadores_por_equipe.isdigit()
+            if condicao:
+                jogadores_por_equipe = int(jogadores_por_equipe)
+                passo3 = False
+            else:
+                print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
+
         jogadores = list(map(str, input(f'\033[1;33mInforme o nome dos jogadores separados por espaço:  \033[m').split()))
 
         jogadores_necessarios = quantidade_de_equipes * jogadores_por_equipe
@@ -123,8 +150,17 @@ while condicao_de_parada == False:
                     print(f'\033[1;32m{index + 1} - {sorteio[0]}\033[m')
 
                 # Selecionando o Sorteio
-                opcao = input('\033[1;36mSelecione o sorteio e verifique seus dados:  \033[m')
-                opcao = int(opcao)
+                passo = True
+                while passo:
+                    opcao = input('\033[1;36mSelecione o sorteio e verifique seus dados:  \033[m')
+                    condicao = opcao.isdigit()
+                    if condicao:
+                        opcao = int(opcao)
+                        passo = False
+                    else:
+                        print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
+
+
                 if opcao <= len(dados):
                     sorteio_escolhido = dados[opcao - 1]
                     print(f'\n\033[1;97m{sorteio_escolhido[0]}:\033[m')
@@ -160,8 +196,17 @@ while condicao_de_parada == False:
                     print(f'\033[1;32m{index + 1} - {sorteio[0]}\033[m')
 
                 # Selecionando o Sorteio
-                opcao = input('\033[1;31mInforme o sorteio para DELETAR:  \033[m')
-                opcao = int(opcao)
+                passo = True
+                while passo:
+                    opcao = input('\033[1;31mInforme o sorteio para DELETAR:  \033[m')
+                    condicao = opcao.isdigit()
+
+                    if condicao:
+                        opcao = int(opcao)
+                        passo = False
+                    else:
+                        print('\033[1;34m******* INFORME APENAS NÚMEROS\033[m')
+
                 if opcao <= len(dados):
                     sorteio_escolhido = dados[opcao - 1]
 
