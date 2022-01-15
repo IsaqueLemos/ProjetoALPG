@@ -1,4 +1,6 @@
 import random
+
+# Criando um Arquivo.txt para salvar os dados do programa
 ficheiro = open('SorteiosSalvos.txt', 'a')
 ficheiro.close()
 
@@ -52,6 +54,8 @@ while condicao_de_parada == False:
         print('\n\033[1;36m******* Inserindo Dados do Novo Sorteio *******\033[m')
 
         # Definindo as configurações do Sorteio.
+
+        # Capturando o nome do sorteio, executando até o usuário informar uma string com no mínimo um caractere
         passo1 = True
         while passo1:
             nome_do_sorteio = input('\033[1;33mInforme um nome para seu sorteio:  \033[m')
@@ -62,6 +66,7 @@ while condicao_de_parada == False:
             else:
                 print('\033[1;31m******* INFORME NO MÍNIMO 1 (UM) CARACTERE\033[m')
 
+        # Capturando a quantidade de equipes, executando até o usuário informar um número
         passo2 = True
         while passo2:
             quantidade_de_equipes = input('\033[1;33mInsira a quantidade de equipes:  \033[m')
@@ -72,6 +77,7 @@ while condicao_de_parada == False:
             else:
                 print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
 
+        # Capturando a quantidade de jogadores por equipes, executando até o usuário informar um número
         passo3 = True
         while passo3:
             jogadores_por_equipe = input('\033[1;33mInsira a quantidade de jogadores por equipe:  \033[m')
@@ -82,6 +88,7 @@ while condicao_de_parada == False:
             else:
                 print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
 
+        # Capturando os nomes dos jogadores e adicionando-os em uma lista
         jogadores = list(map(str, input(f'\033[1;33mInforme o nome dos jogadores separados por espaço:  \033[m').split()))
 
         jogadores_necessarios = quantidade_de_equipes * jogadores_por_equipe
@@ -110,9 +117,15 @@ while condicao_de_parada == False:
             salvar = input('\n\033[1;36m******* Você deseja salvar este sorteio (S/N)? \033[m').upper()
 
             if salvar == 'S':
+
+                # Selecionando o arquivo para salvamento dos dados
                 arquivo = open('SorteiosSalvos.txt', 'a')
                 arquivo.write('-')
+
+                # Adicionando o Nome do Sorteio
                 arquivo.write(f'{nome_do_sorteio}|')
+
+                # Adicionando as Equipes
                 for equipes in range(len(resultado)):
                     equipe = []
 
@@ -121,11 +134,17 @@ while condicao_de_parada == False:
                 
                     equipe = ' '.join(equipe)
                     arquivo.write(f'Equipe {equipes + 1}: {equipe}|')
+
+                # Mensagem de Sorteio Salvo e fechando o arquivo selecionado
                 print('\033[1;32m******* Sorteio Salvo\033[m')
                 arquivo.close()
             elif salvar == 'N':
+
+                # Descarte do Sorteio
                 print('\033[1;31m******* Sorteio Descartado\033[m')
             else:
+
+                # Informando a opção como inválida e descartando o sorteio
                 print('\033[1;31m******* OPÇÃO INVÁLIDA\033[m')
                 print('\033[1;31m******* Sorteio Descartado\033[m')
 
@@ -139,6 +158,7 @@ while condicao_de_parada == False:
             dados = obterDados(arquivo)
             arquivo.close()
 
+            # Verificando se existem sorteios salvos nos dados do arquivo
             if len(dados) == 0:
                 print('\n\033[1;34mAVISO: Não existem sorteios salvos, crie um novo sorteio e tente novamente.\033[m')
                 condicao_de_parada2 = True
@@ -160,7 +180,7 @@ while condicao_de_parada == False:
                     else:
                         print('\033[1;31m******* INFORME APENAS NÚMEROS\033[m')
 
-
+                # Verificando se a opção escolhida é válida.
                 if opcao <= len(dados):
                     sorteio_escolhido = dados[opcao - 1]
                     print(f'\n\033[1;97m{sorteio_escolhido[0]}:\033[m')
@@ -180,11 +200,13 @@ while condicao_de_parada == False:
 
         condicao_de_parada2 = False
         while condicao_de_parada2 == False:
+
             # Recolhendo Informações do Arquivo
             arquivo = open('SorteiosSalvos.txt', 'r')
             dados = obterDados(arquivo)
             arquivo.close()
 
+            # Verificando se existem sorteios salvos nos dados do arquivo
             if len(dados) == 0:
                 print('\n\033[1;34mAVISO: Não existem sorteios salvos, crie um novo sorteio e tente novamente.\033[m')
                 condicao_de_parada2 = True
@@ -207,6 +229,7 @@ while condicao_de_parada == False:
                     else:
                         print('\033[1;34m******* INFORME APENAS NÚMEROS\033[m')
 
+                # Verificando se a opção escolhida é válida.
                 if opcao <= len(dados):
                     sorteio_escolhido = dados[opcao - 1]
 
@@ -242,7 +265,8 @@ while condicao_de_parada == False:
 
     # Finalizando a Aplicação
     elif opcao == '4':
-        print('\n\033[1;31m************** Programa Finalizado **************\033[m\n\n\n')
+        print('\n\033[1;35m******* CRÉDITOS: GABRIEL, ISAQUE e WEDSON *******\033[m')
+        print('\033[1;31m************** Programa Finalizado **************\033[m\n\n\n')
         condicao_de_parada = True
 
     # Mensagem para Opções Inválidas do Menu

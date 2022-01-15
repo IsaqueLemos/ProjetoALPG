@@ -1,0 +1,50 @@
+#### Projeto de Algoritmos e Lógica de Programação
+#### PROFESSOR RESPONSÁVEL:  AUGUSTO MELO
+
+-------------------------------------------------------------------------------------------------
+
+-INTEGRANTES: 
+	1. Gabriel Safadi Fonseca de Lima Uchoa; 
+	2. Isaque Lemos Barbosa da Silva;
+	3. Wedson Rocha dos Santos.
+
+-------------------------------------------------------------------------------------------------
+
+-INSTRUÇÕES:
+	-----------------------------------------------------------------------------------------
+	- "SorteadorDeEquipes.py" é o projeto principal, com gerenciamento de dados.
+
+		1. Cria um arquivo.txt para salvar os dados.
+
+		2. Opções: Novo Sorteio, Verificar Sorteios Salvos, Deletar Sorteios Salvos.
+
+		3. Código mais extenso e complexo. (274 LINHAS)
+
+		ATENÇÃO, em caso de erro ao executar o programa, executá-lo em uma pasta!		
+
+	-----------------------------------------------------------------------------------------
+	- "SorteadorDeEquipesSimples.py" é o projeto simplificado, sem gerenciamento de dados.
+
+		1. Cria Sorteios.
+
+		2. Código de menor complexidade e menos extenso. (104 LINHAS)
+		
+		ATENÇÃO, em caso de erro ao executar o programa, executá-lo em uma pasta!
+
+-------------------------------------------------------------------------------------------------
+
+-INFORMAÇÕES GERAIS SOBRE O PROJETO:
+
+	: Neste projeto foi desenvolvido um programa em python chamado
+sorteador de equipes. À princípio, foi pensado um programa para equipes
+de esporte, porém a sua elaboração permite vários tipos de sorteio.
+
+	: Foram usadas todas as técnicas vistas em aula até a data 
+do projeto, com o incremento de outras técnicas de estrutura de dados
+, criando um arquivo para gerenciar os dados salvos do usuário.
+
+	: Foram feitas duas versões do sorteador, uma versão que apenas
+faz o sorteio e outra versão que, além de fazer o sorteio, pode gerenciar
+sorteios salvos, deletando-os ou verificando-os.
+
+-------------------------------------------------------------------------------------------------
