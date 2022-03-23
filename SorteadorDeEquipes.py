@@ -265,7 +265,7 @@ while condicao_de_parada == False:
 
     # Finalizando a Aplicação
     elif opcao == '4':
-        print('\n\033[1;35m******* CRÉDITOS: GABRIEL, ISAQUE e WEDSON *******\033[m')
+        print('\n\033[1;35m******* CRÉDITOS: ISAQUE LEMOS BARBOSA DA SILVA *******\033[m')
         print('\033[1;31m************** Programa Finalizado **************\033[m\n\n\n')
         condicao_de_parada = True
 
